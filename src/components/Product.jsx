@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { thumbNail } from '../constants';
+import { closeIcon, nextIcon, previousIcon } from '../assets';
 
 const Product = () => {
   const [hoveredImage, setHoveredImage] = useState(thumbNail[0].image);
@@ -20,28 +21,45 @@ const Product = () => {
   };
 
   return (
-    <div className='px-28 py-16 flex flex-col'>
-      <img src={hoveredImage} alt="" className='h-full w-full rounded-2xl' />
-      <div className='mt-10'>
-        <div className='flex flex-row justify-between'>
-          {/* thumbNail */}
+    <div className='flex max-h-[60%] max-w-[60%]'>
+      <div className='flex flex-col '>
+        <img src={hoveredImage} alt="" className='rounded-2xl' />
+        {/* thumbNail */}
+        <div className='flex mt-4 justify-between'>
           {thumbNail.map((thumb) => (
             <img
               key={thumb.id}
               src={thumb.thumbnailImg}
               alt=""
-              className={`h-[50%] w-[20%] rounded-2xl hover:border-2 hover:scale-105 hover:border-primary transition-opacity duration-300 hover:opacity-40 cursor-pointer 
+              className={`w-16 h-16 rounded-xl hover:border-2 hover:scale-105 hover:border-primary transition-opacity duration-300 hover:opacity-40 cursor-pointer 
                 ${thumb.id === hoveredThumbnail ? 'border-2 scale-105 border-primary opacity-40' : ''}`}
               onMouseEnter={() => handleThumbnailHover(thumb.image, thumb.id)} onClick={handleThumbnailClick}
             />
           ))}
         </div>
+
+
       </div>
 
       {lightboxOpen && (
         <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-black bg-opacity-50">
+          
           <div className="relative flex flex-col items-center">
-            <img src={hoveredImage} alt="" className="max-h-[50%] max-w-[50%] rounded-2xl" />
+            <div className='flex w-[50%] justify-end mt-4'>
+              <button
+                className=""
+                onClick={closeLightbox}
+              >
+                <img src={closeIcon} alt="" />
+              </button>
+            </div>
+           
+            <div className="flex mt-4 justify-center gap-5">
+              <button><img src={previousIcon} alt="" /></button>
+              <img src={hoveredImage} alt="" className="max-h-[50%] max-w-[50%] rounded-xl" />
+              <button><img src={nextIcon} alt="" /></button>
+            </div>
+            
             <div className="flex mt-4 justify-center gap-5">
               {thumbNail.map((thumb) => (
                 <img
@@ -55,13 +73,8 @@ const Product = () => {
                   onClick={handleThumbnailClick}
                 />
               ))}
+
             </div>
-            <button
-              className="absolute top-4 right-4 text-white text-xl"
-              onClick={closeLightbox}
-            >
-              Close
-            </button>
           </div>
         </div>
 
@@ -75,4 +88,4 @@ export default Product;
 
 // TODO MODIFY THE LIGHTBOX, create new useState so that the hover effect not affect
 // TODO Add the arrow, add the function
-// TODO Add the close image, add the function
+// TODO For the close icon, add the hover, function
