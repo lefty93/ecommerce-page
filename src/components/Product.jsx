@@ -72,3 +72,7 @@ const Product = () => {
 };
 
 export default Product;
+
+// TODO MODIFY THE LIGHTBOX, create new useState so that the hover effect not affect
+// TODO Add the arrow, add the function
+// TODO Add the close image, add the function
