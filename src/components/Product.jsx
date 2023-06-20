@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { thumbNail } from '../constants';
 import { closeIcon, nextIcon, previousIcon } from '../assets';
 
+
 const Product = () => {
   const [hoveredImage, setHoveredImage] = useState(thumbNail[0].image);
   const [hoveredThumbnail, setHoveredThumbnail] = useState(thumbNail[0].id);
@@ -43,23 +44,35 @@ const Product = () => {
 
       {lightboxOpen && (
         <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-black bg-opacity-50">
-          
+
           <div className="relative flex flex-col items-center">
             <div className='flex w-[50%] justify-end mt-4'>
               <button
-                className=""
+                className='text-white hover:text-[#ff7d1a]'
                 onClick={closeLightbox}
               >
-                <img src={closeIcon} alt="" />
+                <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg" className="">
+                  <path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="currentColor" fillRule="evenodd" />
+                </svg>
+
               </button>
             </div>
-           
-            <div className="flex mt-4 justify-center gap-5">
-              <button><img src={previousIcon} alt="" /></button>
+
+            <div className="flex mt-4 justify-center items-center gap-5">
+              <button className="rounded-full bg-white flex items-center justify-center hover:text-[#ff7d1a] h-10 w-10 z-10 translate-x-10">
+                <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg" className="">
+                  <path d="M11 1 3 9l8 8" stroke="currentColor" strokeWidth="3" fill="none" fillRule="evenodd" />
+                </svg>
+              </button>
               <img src={hoveredImage} alt="" className="max-h-[50%] max-w-[50%] rounded-xl" />
-              <button><img src={nextIcon} alt="" /></button>
+              <button className="rounded-full bg-white flex items-center justify-center hover:text-[#ff7d1a] h-10 w-10 z-10 -translate-x-10">
+                <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg" className="">
+                  <path d="m2 1 8 8-8 8" stroke="currentColor" strokeWidth="3" fill="none" fillRule="evenodd" />
+                </svg>
+              </button>
             </div>
-            
+
+
             <div className="flex mt-4 justify-center gap-5">
               {thumbNail.map((thumb) => (
                 <img

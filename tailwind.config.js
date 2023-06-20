@@ -6,6 +6,8 @@ export default {
       default: theme('colors.gray.300', 'currentColor'),
       'primary': 'hsl(26, 100%, 55%)'
     }),
+
+
     extend: {},
   },
   plugins: [],
