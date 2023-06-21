@@ -25,8 +25,28 @@ const Product = () => {
     setLightboxOpen(false);
   };
 
+  const goToPreviousImage = () => {
+    const previousIndex = thumbNail.findIndex((thumb) => thumb.id === clickedThumbnail);
+    console.log("previousIndex", previousIndex);
+    const currentIndex = (previousIndex - 1 + thumbNail.length) % thumbNail.length;
+    console.log("currentIndex", currentIndex);
+    const currentThumb = thumbNail[currentIndex];
+    console.log("currentThumb", currentThumb)
+    setClickedImage(currentThumb.image);
+    setClickedThumbnail(currentThumb.id);
+  }
 
-
+  const goToNextImage = () => {
+    const previousIndex = thumbNail.findIndex((thumb) => thumb.id === clickedThumbnail);
+    console.log("previousIndex", previousIndex);
+    const currentIndex = (previousIndex + 1) % thumbNail.length;
+    console.log("currentIndex", currentIndex);
+    const currentThumb = thumbNail[currentIndex];
+    console.log("", currentThumb)
+    setClickedImage(currentThumb.image);
+    setClickedThumbnail(currentThumb.id);
+  }
+  
 
   return (
     <div className='flex max-h-[60%] max-w-[60%]'>
@@ -64,22 +84,22 @@ const Product = () => {
               </button>
             </div>
 
-            <div className="flex mt-4 justify-center items-center gap-5">
-              <button className="rounded-full bg-white flex items-center justify-center hover:text-[#ff7d1a] h-10 w-10 z-10 translate-x-10">
-                <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg" className="">
+            <div className="flex my-4 justify-center items-center gap-5">
+              <button className="rounded-full bg-white flex items-center justify-center hover:text-[#ff7d1a] h-10 w-10 z-10 translate-x-10" onClick={goToPreviousImage}>
+                <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg" className="previousButton">
                   <path d="M11 1 3 9l8 8" stroke="currentColor" strokeWidth="3" fill="none" fillRule="evenodd" />
                 </svg>
               </button>
               <img src={clickedImage} alt="" className="max-h-[50%] max-w-[50%] rounded-xl" />
-              <button className="rounded-full bg-white flex items-center justify-center hover:text-[#ff7d1a] h-10 w-10 z-10 -translate-x-10">
-                <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg" className="">
+              <button className="rounded-full bg-white flex items-center justify-center hover:text-[#ff7d1a] h-10 w-10 z-10 -translate-x-10" onClick={goToNextImage}>
+                <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg" className="nextButton">
                   <path d="m2 1 8 8-8 8" stroke="currentColor" strokeWidth="3" fill="none" fillRule="evenodd" />
                 </svg>
               </button>
             </div>
 
 
-            <div className="flex mt-4 justify-center gap-12">
+            <div className="flex h-full w-full justify-center gap-5">
               {thumbNail.map((thumb) => (
                 <img
                   key={thumb.id}
@@ -105,5 +125,5 @@ const Product = () => {
 export default Product;
 
 
-// TODO Add the arrow, add the function
+
 
