@@ -46,28 +46,29 @@ const Product = () => {
     setClickedImage(currentThumb.image);
     setClickedThumbnail(currentThumb.id);
   }
-  
+
 
   return (
-    <div className='flex max-h-[60%] max-w-[60%]'>
-      <div className='flex flex-col '>
+    <div className='flex w-[447px] h-[567px] items-end gap-[30px] flex-col mt-[91px] '>
+      <div className='w-[445px] h-[445px]'>
         <img src={hoveredImage} alt="" className='rounded-2xl' />
-        {/* thumbNail */}
-        <div className='flex mt-4 justify-between'>
-          {thumbNail.map((thumb) => (
-            <img
-              key={thumb.id}
-              src={thumb.thumbnailImg}
-              alt=""
-              className={`w-16 h-16 rounded-xl hover:border-2 hover:scale-105 hover:border-primary transition-opacity duration-300 hover:opacity-40 cursor-pointer 
-                ${thumb.id === hoveredThumbnail ? 'border-2 scale-105 border-primary opacity-40' : ''} `}
-              onMouseEnter={() => handleThumbnailHover(thumb.image, thumb.id)} onClick={() => handleThumbnailClick(thumb.image, thumb.id)}
-            />
-          ))}
-        </div>
-
-
       </div>
+      {/* thumbNail */}
+      <div className='flex gap-[31px]'>
+        {thumbNail.map((thumb) => (
+          <img
+            key={thumb.id}
+            src={thumb.thumbnailImg}
+            alt=""
+            className={`w-[88px] h-[88px] rounded-xl hover:border-2 hover:scale-105 hover:border-primary transition-opacity duration-300 hover:opacity-40 cursor-pointer 
+                ${thumb.id === hoveredThumbnail ? 'border-2 scale-105 border-primary opacity-40' : ''} `}
+            onMouseEnter={() => handleThumbnailHover(thumb.image, thumb.id)} onClick={() => handleThumbnailClick(thumb.image, thumb.id)}
+          />
+        ))}
+      </div>
+
+
+
 
       {lightboxOpen && (
         <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-black bg-opacity-50">
