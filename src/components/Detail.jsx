@@ -1,5 +1,5 @@
 import React from 'react'
-import { minusIcon, plusIcon, cartIcon } from "../assets"
+import { minusIcon, plusIcon, cartIcon, deleteIcon } from "../assets"
 
 const Detail = () => {
   return (
@@ -44,3 +44,5 @@ const Detail = () => {
 }
 
 export default Detail
+
+// TODO Add functionality to add item to the cart.
