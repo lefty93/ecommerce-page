@@ -4,7 +4,7 @@ import { deleteIcon } from '../assets'
 
 const CartItem = ({ quantity }) => {
     return (
-        <div className='absolute w-[360px] h-[256px] shadow-[0_50px_50px_0px_rgba(0,0,0,0.10)] top-[90px] right-[0px] rounded-[10px] shrink-0 bg-[#fff]'>
+        <div className='absolute w-[360px] h-[256px] shadow-[0_50px_50px_0px_rgba(0,0,0,0.10)] top-[90px] right-[90px] rounded-[10px] shrink-0 bg-[#fff]'>
             <div className='flex items-center h-[68px] pl-[24px] text-[#1d2025] border-b-2 border-[#f7f8fd]'>
                 <span className='text-[15px] font-bold leading-[14px]'>Cart</span>
             </div>
