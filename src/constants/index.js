@@ -29,3 +29,12 @@ export const thumbNail = [
     { "id": "product_3", thumbnailImg: thumbNail_3, image: product_3 },
     { "id": "product_4", thumbnailImg: thumbNail_4, image: product_4 },
 ]
+
+export const product =
+{
+    "id": "item_1",
+    "name": "Fall Limited Edition Sneakers",
+    "image": product_1,
+    "price": "125.00",
+    "description": "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.",
+}
