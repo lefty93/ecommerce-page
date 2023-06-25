@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { navLinks } from '../constants'
 import { logo } from '../assets'
 import { cartIcon } from '../assets'
@@ -20,7 +20,6 @@ const Navbar = () => {
             <div className='flex gap-[45px] items-center relative'>
                 <img src={cartIcon} alt="" className='w-[22px] h-5' />
                 <img src={imageAvatar} alt="" className='w-[50px] h-[50px] border-[1px] rounded-full border-[#ff7d1a]' />
-
             </div>
         </nav>
     )

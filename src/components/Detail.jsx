@@ -14,6 +14,16 @@ const Detail = () => {
     }
   }
 
+  const [showCart, setShowCart] = useState(false)
+
+  const [cartQuantity, setCartQuantity] = useState(null)
+  const addToCart = () => {
+    setCartQuantity(quantity);
+    setShowCart(true);
+    setTimeout(() => {
+      setShowCart(false);
+    }, 2000)
+  }
 
   return (
     <div className='mt-[152px]'>
@@ -43,12 +53,16 @@ const Detail = () => {
           </div>
         </div>
 
-        <button className='px-[77px] py-[17px] bg-[#ff7d1a] rounded-[10px] inline-flex justify-center items-center gap-[10px] shadow-[0_8px_10px_0px] shadow-[#FFEDE0] w-[274px] h-[54px]'>
+        <button className='px-[77px] py-[17px] bg-[#ff7d1a] rounded-[10px] inline-flex justify-center items-center gap-[10px] shadow-[0_8px_10px_0px] shadow-[#FFEDE0] w-[274px] h-[54px]' onClick={addToCart}>
 
           <img src={cartIcon} alt="" className='h-[17px] w-[16px]' />
           <p className='font-bold text-[16px] text-white'>Add to cart</p>
         </button>
-        <CartItem quantity={quantity} />
+        {showCart && cartQuantity >= 1 ? (
+          <CartItem
+            cartQuantity={cartQuantity}
+          />
+        ) : null}
       </div>
 
     </div>
