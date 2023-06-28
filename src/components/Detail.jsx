@@ -20,9 +20,6 @@ const Detail = () => {
   const addToCart = () => {
     setCartQuantity(quantity);
     setShowCart(true);
-    setTimeout(() => {
-      setShowCart(false);
-    }, 2000)
   }
 
   return (
