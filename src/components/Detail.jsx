@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { minusIcon, plusIcon, cartIcon } from "../assets"
 import { product } from '../constants';
 import CartItem from './CartItem';

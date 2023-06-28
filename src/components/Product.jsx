@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { thumbNail } from '../constants';
 
 
@@ -49,12 +49,12 @@ const Product = () => {
 
 
   return (
-    <div className='flex w-[447px] h-[567px] items-end gap-[30px] flex-col mt-[91px] '>
+    <div className='flex w-[447px] h-[567px] items-end gap-[30px] flex-col md:mt-[91px] '>
       <div className='w-[445px] h-[445px]'>
         <img src={hoveredImage} alt="" className='rounded-2xl' />
       </div>
       {/* thumbNail */}
-      <div className='flex gap-[31px]'>
+      <div className='md:flex gap-[31px] hidden '>
         {thumbNail.map((thumb) => (
           <img
             key={thumb.id}
