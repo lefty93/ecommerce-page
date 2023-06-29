@@ -49,10 +49,23 @@ const Product = () => {
 
 
   return (
-    <div className='flex w-[447px] h-[567px] items-end gap-[30px] flex-col md:mt-[91px] '>
-      <div className='w-[445px] h-[445px]'>
-        <img src={hoveredImage} alt="" className='rounded-2xl' />
+    <div className='flex md:w-[447px] md:h-[567px] w-full h-full items-center gap-[30px] flex-col md:mt-[91px]'>
+    
+      <img src={hoveredImage} alt="" className='md:rounded-2xl md:w-[445px] md:h-[445px] hidden md:block' />
+      <div className="flex justify-center items-center md:hidden">
+        <button className="rounded-full bg-white flex items-center justify-center hover:text-[#ff7d1a] h-10 w-10 z-10 translate-x-10">
+          <svg width="40" height="18" xmlns="http://www.w3.org/2000/svg" className="previousButton translate-x-3">
+            <path d="M11 1 3 9l8 8" stroke="currentColor" strokeWidth="3" fill="none" fillRule="evenodd" />
+          </svg>
+        </button>
+        <img src={clickedImage} alt="" className="" />
+        <button className="rounded-full bg-white flex items-center justify-center hover:text-[#ff7d1a] h-10 w-10 z-10 -translate-x-10">
+          <svg width="40" height="18" xmlns="http://www.w3.org/2000/svg" className="nextButton translate-x-3">
+            <path d="m2 1 8 8-8 8" stroke="currentColor" strokeWidth="3" fill="none" fillRule="evenodd" />
+          </svg>
+        </button>
       </div>
+      
       {/* thumbNail */}
       <div className='md:flex gap-[31px] hidden '>
         {thumbNail.map((thumb) => (
