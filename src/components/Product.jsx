@@ -53,14 +53,14 @@ const Product = () => {
     
       <img src={hoveredImage} alt="" className='md:rounded-2xl md:w-[445px] md:h-[445px] hidden md:block' />
       <div className="flex justify-center items-center md:hidden">
-        <button className="rounded-full bg-white flex items-center justify-center hover:text-[#ff7d1a] h-10 w-10 z-10 translate-x-10">
-          <svg width="40" height="18" xmlns="http://www.w3.org/2000/svg" className="previousButton translate-x-3">
+        <button className="rounded-full bg-white flex items-center justify-center hover:text-[#ff7d1a] h-10 w-10 z-10 translate-x-14" onClick={goToPreviousImage}>
+          <svg width="40" height="18" xmlns="http://www.w3.org/2000/svg" className="previousButton translate-x-[14px]">
             <path d="M11 1 3 9l8 8" stroke="currentColor" strokeWidth="3" fill="none" fillRule="evenodd" />
           </svg>
         </button>
         <img src={clickedImage} alt="" className="" />
-        <button className="rounded-full bg-white flex items-center justify-center hover:text-[#ff7d1a] h-10 w-10 z-10 -translate-x-10">
-          <svg width="40" height="18" xmlns="http://www.w3.org/2000/svg" className="nextButton translate-x-3">
+        <button className="rounded-full bg-white flex items-center justify-center hover:text-[#ff7d1a] h-10 w-10 z-10 -translate-x-14" onClick={goToNextImage}>
+          <svg width="40" height="18" xmlns="http://www.w3.org/2000/svg" className="nextButton translate-x-[14px]">
             <path d="m2 1 8 8-8 8" stroke="currentColor" strokeWidth="3" fill="none" fillRule="evenodd" />
           </svg>
         </button>
